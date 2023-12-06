@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad de pediatría del hospital nacional de Santani</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;;
+        }
+        
+        body {
+            font-family: 'Red Hat Display', sans-serif;
+            background: var(--background);
+            height: 100vh;
+            justify-content: center;
+            align-items:;
+            text-align:   ;
+            color:  #0059ff;
+        }
+        
+            </style>
+</head>
+<body style = "background-color: #000607; display: flex; align-items: center; justify-content: center; border-radius: 20%">
+<div  style = "width: 50%; height: 50%; background-color: #07bae7; margin: auto; text-align: center; padding: 5%; border-radius: 5%;">
+    <div  style = align-items:center;>
+        <h1>Caluladora de hidratación Basal </h1>
+    </div>
+    <div style = "background-color: #ffffff; margin: auto; text-align: left; padding: 5%; border-radius: 10%;>
+    <label for="numero">Peso:</label>
+    <input type="number" id="numero">
+    <button onclick="calcular()">Calcular</button>
+    
+    <p><strong>CC: </strong><span id="resultado1"></span></p>
+    <p><strong>m+m /2: </strong><span id="resultado"></span></p>
+    <p><strong>SC 1500: </strong><span id="resultado2"></span></p>
+    <p><strong>SC 2000: </strong><span id="resultado3"></span></p>
+
+    <script>
+        function calcular() {
+            // Obtener el valor del campo de entrada
+            var numero = parseFloat(document.getElementById("numero").value);
+
+            // Inicializar los resultados
+            var resultado1;
+            var resultado2;
+            var resultado3;
+            var resultado;
+
+            // Realizar la comparación y la operación matemática
+            if (numero <= 10) {
+                resultado1 = Math.floor((numero * 100)/24);
+                resultado = Math.floor(resultado1*1.5);
+                resultado2 = "";
+                resultado3 = ""; 
+            } else if (numero > 10 && numero <= 20) {
+                resultado1 =Math.floor((1000 + ((numero - 10) * 50))/24);
+                resultado = Math.floor(resultado1*1.5);
+                resultado2 = "";
+                resultado3 = "";
+            } else if (numero > 20 && numero <= 30) {
+                resultado1 = Math.floor((1500 + ((numero - 20) * 20))/24);
+                resultado = Math.floor(resultado1*1.5);
+                resultado2 = "";
+                resultado3 = ""; 
+            } else {
+                resultado1 = "";
+                resultado = "";
+                resultado2 = Math.floor(((numero * 4) + 7) / (numero + 90) * 1500);
+                resultado3 = Math.floor(((numero * 4) + 7) / (numero + 90) * 2000);
+            }
+
+            // Mostrar los resultados en los elementos con id "resultado1" y "resultado2"
+            document.getElementById("resultado1").innerText = resultado1;
+            document.getElementById("resultado").innerText = resultado;
+            document.getElementById("resultado2").innerText = resultado2;
+            document.getElementById("resultado3").innerText = resultado3;
+        }
+    </script>
+    </div>
+</div>
+
+</body>
+</html> 
