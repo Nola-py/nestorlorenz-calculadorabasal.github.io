@@ -1,44 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unidad de pediatría del hospital nacional de Santani</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;;
-        }
-        
-        body {
-            font-family: 'Red Hat Display', sans-serif;
-            background: var(--background);
-            height: 100vh;
-            justify-content: center;
-            align-items:;
-            text-align:   ;
-            color:  #0059ff;
-        }
-        
-            </style>
+    <link rel="stylesheet" href="./style.css"/>
+    <script src="script.js" defer></script>
 </head>
-<body style = "background-color: #000607; display: flex; align-items: center; justify-content: center; border-radius: 20%">
-<div  style = "width: 50%; height: 50%; background-color: #07bae7; margin: auto; text-align: center; padding: 5%; border-radius: 5%;">
-    <div  style = align-items:center;>
-        <h1>Caluladora de hidratación Basal </h1>
-    </div>
-    <div style = "background-color: #ffffff; margin: auto; text-align: left; padding: 5%; border-radius: 10%;>
+<body >
+<div id="principal">
+    <h1>Caluladora de hidratación Basal </h1>
+    <div>
+    <div style = "background-color: #ffffff;">
+    <div id="calculadora">
+    <div class="contenido">
     <label for="numero">Peso:</label>
     <input type="number" id="numero">
     <button onclick="calcular()">Calcular</button>
-    
+    <div style = "text-align: left;border: 1px solid #FF416C;">
     <p><strong>CC: </strong><span id="resultado1"></span></p>
     <p><strong>m+m /2: </strong><span id="resultado"></span></p>
     <p><strong>SC 1500: </strong><span id="resultado2"></span></p>
     <p><strong>SC 2000: </strong><span id="resultado3"></span></p>
-
+    </div>
     <script>
         function calcular() {
             // Obtener el valor del campo de entrada
@@ -74,14 +56,30 @@
             }
 
             // Mostrar los resultados en los elementos con id "resultado1" y "resultado2"
-            document.getElementById("resultado1").innerText = resultado1;
+            document.getElementById("resultado1").innerText = resultado1;"border: 1px solid #FF416C";
             document.getElementById("resultado").innerText = resultado;
             document.getElementById("resultado2").innerText = resultado2;
             document.getElementById("resultado3").innerText = resultado3;
         }
     </script>
     </div>
+    </div>
+    <div id="detalle">
+        <div class="contenido">
+        <div>
+            <h1>¿Como se calcula?</h1>
+            <ul>
+                <li>De 0kg a 10kg, se calcula 100cc por cada kilo.</li>
+                <li>Se suman 50cc por cada kilo de peso por arriba de 10kg, hasta 20kg</li>
+                <li>De 20kg para arriba, se suman 20cc por cada kilo adicional</li>
+            </ul>
+        </div>
+    </div>  
 </div>
+    </div>
+    </div>
+</div>
+    
 
 </body>
 </html> 
